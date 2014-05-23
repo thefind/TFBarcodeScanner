@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA5684DE192FEC8700C754A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5684DD192FEC8700C754A5 /* Foundation.framework */; };
+		EA5684E0192FEC8700C754A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5684DF192FEC8700C754A5 /* CoreGraphics.framework */; };
+		EA5684E2192FEC8700C754A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5684E1192FEC8700C754A5 /* UIKit.framework */; };
+		EA5684E8192FEC8700C754A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA5684E6192FEC8700C754A5 /* InfoPlist.strings */; };
+		EA5684EA192FEC8700C754A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5684E9192FEC8700C754A5 /* main.m */; };
+		EA5684EE192FEC8700C754A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5684ED192FEC8700C754A5 /* AppDelegate.m */; };
+		EA5684F1192FEC8700C754A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA5684EF192FEC8700C754A5 /* Main.storyboard */; };
+		EA5684F4192FEC8700C754A5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5684F3192FEC8700C754A5 /* ViewController.m */; };
+		EA5684F6192FEC8700C754A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA5684F5192FEC8700C754A5 /* Images.xcassets */; };
+		EA7B600619342CBE00ECBD4F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EA7B600519342CBE00ECBD4F /* README.md */; };
+		EA7B600E1935021100ECBD4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5684DD192FEC8700C754A5 /* Foundation.framework */; };
+		EA7B60301935038200ECBD4F /* TFBarcode.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7B5FFD192FEE6100ECBD4F /* TFBarcode.m */; };
+		EA7B60311935038500ECBD4F /* TFBarcodeScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7B5FFF192FEE6100ECBD4F /* TFBarcodeScannerViewController.m */; };
+		EA7B6032193503A600ECBD4F /* libTFBarcodeScanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7B600D1935021100ECBD4F /* libTFBarcodeScanner.a */; };
+		EA7B6033193503B500ECBD4F /* TFBarcode.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA7B5FFC192FEE6100ECBD4F /* TFBarcode.h */; };
+		EA7B6034193503B500ECBD4F /* TFBarcodeScannerViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA7B5FFE192FEE6100ECBD4F /* TFBarcodeScannerViewController.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA7B6035193503C900ECBD4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA5684D2192FEC8700C754A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA7B600C1935021100ECBD4F;
+			remoteInfo = TFBarcodeScanner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EA7B600B1935021100ECBD4F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				EA7B6033193503B500ECBD4F /* TFBarcode.h in CopyFiles */,
+				EA7B6034193503B500ECBD4F /* TFBarcodeScannerViewController.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EA5684DA192FEC8700C754A5 /* TFBarcodeScannerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFBarcodeScannerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA5684DD192FEC8700C754A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EA5684DF192FEC8700C754A5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EA5684E1192FEC8700C754A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EA5684E5192FEC8700C754A5 /* TFBarcodeScannerDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TFBarcodeScannerDemo-Info.plist"; sourceTree = "<group>"; };
+		EA5684E7192FEC8700C754A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA5684E9192FEC8700C754A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EA5684EB192FEC8700C754A5 /* TFBarcodeScannerDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TFBarcodeScannerDemo-Prefix.pch"; sourceTree = "<group>"; };
+		EA5684EC192FEC8700C754A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EA5684ED192FEC8700C754A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EA5684F0192FEC8700C754A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EA5684F2192FEC8700C754A5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EA5684F3192FEC8700C754A5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EA5684F5192FEC8700C754A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EA7B5FFC192FEE6100ECBD4F /* TFBarcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFBarcode.h; sourceTree = "<group>"; };
+		EA7B5FFD192FEE6100ECBD4F /* TFBarcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFBarcode.m; sourceTree = "<group>"; };
+		EA7B5FFE192FEE6100ECBD4F /* TFBarcodeScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFBarcodeScannerViewController.h; sourceTree = "<group>"; };
+		EA7B5FFF192FEE6100ECBD4F /* TFBarcodeScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFBarcodeScannerViewController.m; sourceTree = "<group>"; };
+		EA7B60041933E43300ECBD4F /* TFBarcodeScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFBarcodeScanner.h; sourceTree = "<group>"; };
+		EA7B600519342CBE00ECBD4F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		EA7B60071934F03E00ECBD4F /* TFBarcodeScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFBarcodeScanner.m; sourceTree = "<group>"; };
+		EA7B600D1935021100ECBD4F /* libTFBarcodeScanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTFBarcodeScanner.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA7B601B1935021200ECBD4F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EA7B60381935041C00ECBD4F /* TFBarcodeScanner-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TFBarcodeScanner-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA5684D7192FEC8700C754A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA7B6032193503A600ECBD4F /* libTFBarcodeScanner.a in Frameworks */,
+				EA5684E0192FEC8700C754A5 /* CoreGraphics.framework in Frameworks */,
+				EA5684E2192FEC8700C754A5 /* UIKit.framework in Frameworks */,
+				EA5684DE192FEC8700C754A5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA7B600A1935021100ECBD4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA7B600E1935021100ECBD4F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA5684D1192FEC8700C754A5 = {
+			isa = PBXGroup;
+			children = (
+				EA7B5FFB192FEE6100ECBD4F /* TFBarcodeScanner */,
+				EA5684E3192FEC8700C754A5 /* Demo */,
+				EA5684DC192FEC8700C754A5 /* Frameworks */,
+				EA5684DB192FEC8700C754A5 /* Products */,
+				EA7B600519342CBE00ECBD4F /* README.md */,
+			);
+			sourceTree = "<group>";
+		};
+		EA5684DB192FEC8700C754A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA5684DA192FEC8700C754A5 /* TFBarcodeScannerDemo.app */,
+				EA7B600D1935021100ECBD4F /* libTFBarcodeScanner.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA5684DC192FEC8700C754A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA5684DD192FEC8700C754A5 /* Foundation.framework */,
+				EA5684DF192FEC8700C754A5 /* CoreGraphics.framework */,
+				EA5684E1192FEC8700C754A5 /* UIKit.framework */,
+				EA7B601B1935021200ECBD4F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA5684E3192FEC8700C754A5 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				EA5684EF192FEC8700C754A5 /* Main.storyboard */,
+				EA5684EC192FEC8700C754A5 /* AppDelegate.h */,
+				EA5684ED192FEC8700C754A5 /* AppDelegate.m */,
+				EA5684F2192FEC8700C754A5 /* ViewController.h */,
+				EA5684F3192FEC8700C754A5 /* ViewController.m */,
+				EA5684F5192FEC8700C754A5 /* Images.xcassets */,
+				EA5684E4192FEC8700C754A5 /* Supporting Files */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		EA5684E4192FEC8700C754A5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA5684E5192FEC8700C754A5 /* TFBarcodeScannerDemo-Info.plist */,
+				EA5684E6192FEC8700C754A5 /* InfoPlist.strings */,
+				EA5684E9192FEC8700C754A5 /* main.m */,
+				EA5684EB192FEC8700C754A5 /* TFBarcodeScannerDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA7B5FFB192FEE6100ECBD4F /* TFBarcodeScanner */ = {
+			isa = PBXGroup;
+			children = (
+				EA7B60041933E43300ECBD4F /* TFBarcodeScanner.h */,
+				EA7B60071934F03E00ECBD4F /* TFBarcodeScanner.m */,
+				EA7B5FFC192FEE6100ECBD4F /* TFBarcode.h */,
+				EA7B5FFD192FEE6100ECBD4F /* TFBarcode.m */,
+				EA7B5FFE192FEE6100ECBD4F /* TFBarcodeScannerViewController.h */,
+				EA7B5FFF192FEE6100ECBD4F /* TFBarcodeScannerViewController.m */,
+				EA7B60371935040F00ECBD4F /* Supporting Files */,
+			);
+			path = TFBarcodeScanner;
+			sourceTree = "<group>";
+		};
+		EA7B60371935040F00ECBD4F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA7B60381935041C00ECBD4F /* TFBarcodeScanner-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA5684D9192FEC8700C754A5 /* TFBarcodeScannerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA56850C192FEC8700C754A5 /* Build configuration list for PBXNativeTarget "TFBarcodeScannerDemo" */;
+			buildPhases = (
+				EA5684D6192FEC8700C754A5 /* Sources */,
+				EA5684D7192FEC8700C754A5 /* Frameworks */,
+				EA5684D8192FEC8700C754A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA7B6036193503C900ECBD4F /* PBXTargetDependency */,
+			);
+			name = TFBarcodeScannerDemo;
+			productName = TFBarcodeScannerDemo;
+			productReference = EA5684DA192FEC8700C754A5 /* TFBarcodeScannerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EA7B600C1935021100ECBD4F /* TFBarcodeScanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA7B602A1935021200ECBD4F /* Build configuration list for PBXNativeTarget "TFBarcodeScanner" */;
+			buildPhases = (
+				EA7B60091935021100ECBD4F /* Sources */,
+				EA7B600A1935021100ECBD4F /* Frameworks */,
+				EA7B600B1935021100ECBD4F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TFBarcodeScanner;
+			productName = TFBarcodeScanner;
+			productReference = EA7B600D1935021100ECBD4F /* libTFBarcodeScanner.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA5684D2192FEC8700C754A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = TheFind;
+			};
+			buildConfigurationList = EA5684D5192FEC8700C754A5 /* Build configuration list for PBXProject "TFBarcodeScanner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA5684D1192FEC8700C754A5;
+			productRefGroup = EA5684DB192FEC8700C754A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA5684D9192FEC8700C754A5 /* TFBarcodeScannerDemo */,
+				EA7B600C1935021100ECBD4F /* TFBarcodeScanner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA5684D8192FEC8700C754A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA5684F6192FEC8700C754A5 /* Images.xcassets in Resources */,
+				EA5684E8192FEC8700C754A5 /* InfoPlist.strings in Resources */,
+				EA7B600619342CBE00ECBD4F /* README.md in Resources */,
+				EA5684F1192FEC8700C754A5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA5684D6192FEC8700C754A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA5684F4192FEC8700C754A5 /* ViewController.m in Sources */,
+				EA5684EE192FEC8700C754A5 /* AppDelegate.m in Sources */,
+				EA5684EA192FEC8700C754A5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA7B60091935021100ECBD4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA7B60311935038500ECBD4F /* TFBarcodeScannerViewController.m in Sources */,
+				EA7B60301935038200ECBD4F /* TFBarcode.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA7B6036193503C900ECBD4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA7B600C1935021100ECBD4F /* TFBarcodeScanner */;
+			targetProxy = EA7B6035193503C900ECBD4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EA5684E6192FEC8700C754A5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA5684E7192FEC8700C754A5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EA5684EF192FEC8700C754A5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA5684F0192FEC8700C754A5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA56850A192FEC8700C754A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EA56850B192FEC8700C754A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA56850D192FEC8700C754A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo/TFBarcodeScannerDemo-Prefix.pch";
+				INFOPLIST_FILE = "Demo/TFBarcodeScannerDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EA56850E192FEC8700C754A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo/TFBarcodeScannerDemo-Prefix.pch";
+				INFOPLIST_FILE = "Demo/TFBarcodeScannerDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EA7B602B1935021200ECBD4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/TFBarcodeScanner.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TFBarcodeScanner/TFBarcodeScanner-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EA7B602C1935021200ECBD4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/TFBarcodeScanner.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TFBarcodeScanner/TFBarcodeScanner-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA5684D5192FEC8700C754A5 /* Build configuration list for PBXProject "TFBarcodeScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA56850A192FEC8700C754A5 /* Debug */,
+				EA56850B192FEC8700C754A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA56850C192FEC8700C754A5 /* Build configuration list for PBXNativeTarget "TFBarcodeScannerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA56850D192FEC8700C754A5 /* Debug */,
+				EA56850E192FEC8700C754A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA7B602A1935021200ECBD4F /* Build configuration list for PBXNativeTarget "TFBarcodeScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA7B602B1935021200ECBD4F /* Debug */,
+				EA7B602C1935021200ECBD4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA5684D2192FEC8700C754A5 /* Project object */;
+}
