@@ -31,6 +31,7 @@
 
 #import "TFBarcodeScannerViewController.h"
 
+NSString* const TFBarcodeScannerDomain = @"TFBarcodeScannerDomain";
 static const CGFloat TFBarcodeScannerPreviewAnimationDuration = 0.2f;
 
 @interface TFBarcodeScannerViewController ()
@@ -250,6 +251,11 @@ static const CGFloat TFBarcodeScannerPreviewAnimationDuration = 0.2f;
     // Subclasses can override
 }
 
+- (void)barcodePreviewError:(NSError*)error
+{
+    // Subclasses should override to handle permission errors and inform user
+}
+
 #pragma Capture Metadata Delegate
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
@@ -311,17 +317,23 @@ static const CGFloat TFBarcodeScannerPreviewAnimationDuration = 0.2f;
     
     if (!self.sessionQueue)
         self.sessionQueue = dispatch_queue_create("session", DISPATCH_QUEUE_SERIAL);
-	
-	dispatch_async(self.sessionQueue, ^{
+    
+    dispatch_async(self.sessionQueue, ^{
         NSError *error = nil;
         AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:self.camera error:&error];
         
-        if (!error && [self.session canAddInput:input]) {
+        if (error) {
+            [self notifyPreviewError:error];
+        } else if (![self.session canAddInput:input]) {
+            [self notifyPreviewError:[NSError errorWithDomain:TFBarcodeScannerDomain code:TFBarcodeScannerBadInput userInfo:@{NSLocalizedDescriptionKey:@"Could not initialize camera"}]];
+        } else {
             [self.session addInput:input];
             
             AVCaptureMetadataOutput *output = [AVCaptureMetadataOutput new];
             
-            if ([self.session canAddOutput:output]) {
+            if (![self.session canAddOutput:output]) {
+                [self notifyPreviewError:[NSError errorWithDomain:TFBarcodeScannerDomain code:TFBarcodeScannerBadOutput userInfo:@{NSLocalizedDescriptionKey:@"Could not initialize camera"}]];
+            } else {
                 [self.session addOutput:output];
                 
                 if (!self.outputQueue)
@@ -375,6 +387,13 @@ static const CGFloat TFBarcodeScannerPreviewAnimationDuration = 0.2f;
 {
     if (!self.paused)
         [self.session stopRunning];
+}
+
+- (void)notifyPreviewError:(NSError*)error
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self barcodePreviewError:error];
+    });
 }
 
 @end

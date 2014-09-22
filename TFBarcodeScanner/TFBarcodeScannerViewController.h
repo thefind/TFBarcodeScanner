@@ -34,6 +34,19 @@
 #import "TFBarcode.h"
 
 /**
+ *  Barcode scanner NSError domain
+ */
+extern NSString* const TFBarcodeScannerDomain;
+
+/**
+ *  Barcode scanner NSError codes
+ */
+typedef enum {
+    TFBarcodeScannerBadInput = 100,
+    TFBarcodeScannerBadOutput,
+} TFBarcodeScannerDomainErrorCode;
+
+/**
  *  A view controller that sets up the device for scanning, provides a preview,
  *  and returns scanned barcodes.
  *  
@@ -131,5 +144,14 @@
  *  @param duration The duration of the pending animation to hide the preview, in seconds.
  */
 - (void)barcodePreviewWillHideWithDuration:(CGFloat)duration;
+
+/**
+ *  Called if there is a problem initializing the preview camera. Often this means
+ *  permission to the camera was denied. Subclasses should override this and display
+ *  a message to the user with more information.
+ *
+ *  @param error The error that was encountered.
+ */
+- (void)barcodePreviewError:(NSError*)error;
 
 @end
