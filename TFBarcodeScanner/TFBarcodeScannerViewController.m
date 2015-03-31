@@ -47,6 +47,22 @@ static const CGFloat TFBarcodeScannerPreviewAnimationDuration = 0.2f;
 
 @implementation TFBarcodeScannerViewController
 
+@synthesize delegate;
+
+/*
++ (id<TFBarcodeScannerViewController>) delegate {
+    @synchronized(self) {
+        return delegate;
+    }
+}
+
++ (void) setDelegate:(id<TFBarcodeScannerViewController>)del {
+    @synchronized(self) {
+        delegate = del;
+    }
+}
+*/
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -239,21 +255,33 @@ static const CGFloat TFBarcodeScannerPreviewAnimationDuration = 0.2f;
 - (void)barcodePreviewWillShowWithDuration:(CGFloat)duration
 {
     // Subclasses can override
+    if (delegate != nil && [delegate respondsToSelector:@selector(barcodePreviewWillShowWithDuration:)]) {
+        [delegate barcodePreviewWillShowWithDuration:duration];
+    }
 }
 
 - (void)barcodePreviewWillHideWithDuration:(CGFloat)duration
 {
     // Subclasses can override
+    if (delegate != nil && [delegate respondsToSelector:@selector(barcodePreviewWillHideWithDuration:)]) {
+        [delegate barcodePreviewWillHideWithDuration:duration];
+    }
 }
 
 - (void)barcodeWasScanned:(NSSet*)barcodes
 {
     // Subclasses can override
+    if (delegate != nil && [delegate respondsToSelector:@selector(barcodeWasScanned:)]) {
+        [delegate barcodeWasScanned:barcodes];
+    }
 }
 
 - (void)barcodePreviewError:(NSError*)error
 {
     // Subclasses should override to handle permission errors and inform user
+    if (delegate != nil && [delegate respondsToSelector:@selector(barcodePreviewError:)]) {
+        [delegate barcodePreviewError:error];
+    }
 }
 
 #pragma Capture Metadata Delegate
