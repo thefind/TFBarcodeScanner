@@ -26,7 +26,7 @@
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
-*/
+ */
 
 
 #import "TFBarcodeScannerViewController.h"
@@ -57,7 +57,7 @@ static const CGFloat TFBarcodeScannerPreviewAnimationDuration = 0.2f;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
     [self start];
@@ -66,7 +66,7 @@ static const CGFloat TFBarcodeScannerPreviewAnimationDuration = 0.2f;
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
     [self stop];
@@ -110,7 +110,7 @@ static const CGFloat TFBarcodeScannerPreviewAnimationDuration = 0.2f;
     dispatch_async(self.sessionQueue, ^{
         if (!self.session.isRunning && self.isSessionValid) {
             [self.session startRunning];
-
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self showPreviewAnimated];
             });
@@ -239,21 +239,33 @@ static const CGFloat TFBarcodeScannerPreviewAnimationDuration = 0.2f;
 - (void)barcodePreviewWillShowWithDuration:(CGFloat)duration
 {
     // Subclasses can override
+    if ([_delegate respondsToSelector:@selector(barcodePreviewWillShowWithDuration:)]) {
+        [_delegate barcodePreviewWillShowWithDuration:duration];
+    }
 }
 
 - (void)barcodePreviewWillHideWithDuration:(CGFloat)duration
 {
     // Subclasses can override
+    if ([_delegate respondsToSelector:@selector(barcodePreviewWillHideWithDuration:)]) {
+        [_delegate barcodePreviewWillHideWithDuration:duration];
+    }
 }
 
 - (void)barcodeWasScanned:(NSSet*)barcodes
 {
     // Subclasses can override
+    if ([_delegate respondsToSelector:@selector(barcodeWasScanned:)]) {
+        [_delegate barcodeWasScanned:barcodes];
+    }
 }
 
 - (void)barcodePreviewError:(NSError*)error
 {
     // Subclasses should override to handle permission errors and inform user
+    if ([_delegate respondsToSelector:@selector(barcodePreviewError:)]) {
+        [_delegate barcodePreviewError:error];
+    }
 }
 
 #pragma Capture Metadata Delegate
@@ -371,7 +383,7 @@ static const CGFloat TFBarcodeScannerPreviewAnimationDuration = 0.2f;
 - (void)hidePreviewAnimated
 {
     [self barcodePreviewWillHideWithDuration:TFBarcodeScannerPreviewAnimationDuration];
-
+    
     [UIView animateWithDuration:TFBarcodeScannerPreviewAnimationDuration animations:^{
         self.previewLayer.opacity = 0.0f;
     }];

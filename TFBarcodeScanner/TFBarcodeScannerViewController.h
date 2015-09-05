@@ -46,6 +46,42 @@ typedef enum {
     TFBarcodeScannerBadOutput,
 } TFBarcodeScannerDomainErrorCode;
 
+@protocol TFBarcodeScannerDelegate <NSObject>
+
+@optional
+/**
+ *  Called whenever a barcode is scanned. Subclasses should override.
+ *
+ *  @param barcodes A set of TFBarcodes that were recognized.
+ */
+- (void)barcodeWasScanned:(NSSet*)barcodes;
+
+/**
+ *  Called whenever the preview will be shown. Subclasses can override to show
+ *  additional UI elements when the preview is showing.
+ *
+ *  @param duration The duration of the pending animation to show the preview, in seconds.
+ */
+- (void)barcodePreviewWillShowWithDuration:(CGFloat)duration;
+
+/**
+ *  Called whenever the preview will be hidden. Subclasses can override to hide
+ *  additional UI elements when the preview is hidden.
+ *
+ *  @param duration The duration of the pending animation to hide the preview, in seconds.
+ */
+- (void)barcodePreviewWillHideWithDuration:(CGFloat)duration;
+
+/**
+ *  Called if there is a problem initializing the preview camera. Often this means
+ *  permission to the camera was denied. Subclasses should override this and display
+ *  a message to the user with more information.
+ *
+ *  @param error The error that was encountered.
+ */
+- (void)barcodePreviewError:(NSError*)error;
+@end
+
 /**
  *  A view controller that sets up the device for scanning, provides a preview,
  *  and returns scanned barcodes.
@@ -57,6 +93,7 @@ typedef enum {
  */
 @interface TFBarcodeScannerViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate>
 
+@property (nonatomic) id<TFBarcodeScannerDelegate> delegate;
 /**
  *  A bit flag of TFBarcodeTypes. Only barcodes of these types will be returned by the
  *  scanner. If you don't specify any barcode types, all barcode types will be returned.
