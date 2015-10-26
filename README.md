@@ -1,3 +1,5 @@
+![pod badge](https://img.shields.io/cocoapods/v/TFBarcodeScanner.svg)
+
 TFBarcodeScanner
 ================
 
