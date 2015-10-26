@@ -1,11 +1,11 @@
 TFBarcodeScanner
 ================
 
-Scan barcodes in iOS7 with elegance and ease
+Scan barcodes with elegance and ease
 
 ![screenshot](https://raw.githubusercontent.com/thefind/TFBarcodeScanner/master/Screenshots/screenshot.png)
 
-iOS7 provides barcode scanning as part of the AV Framework, but it takes some work to
+iOS provides barcode scanning as part of the AV Framework, but it takes some work to
 figure it all out and then set it up to be efficient and robust. TFBarcodeScanner makes
 it super easy: create a view controller subclass of `TFBarcodeScannerViewController`,
 override `barcodeWasScanned`, and you are scanning barcodes!
@@ -33,3 +33,7 @@ then add the TFBarcodeScanner static library in your project's Build Phases.
    elements.
    
 See the Demo for sample code.
+
+## Notes
+
+Requires iOS 7 or greater.
